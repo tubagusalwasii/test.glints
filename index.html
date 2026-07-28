@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Course — Sertifikasi Grafologi CHA | LKP Grafologi Indonesia</title>
+    <meta name="description" content="Ikuti Comprehensive Course dari LKP Grafologi Indonesia dan raih gelar Certified Handwriting Analyst (CHA) resmi dari KAROHS, USA. Kuasai 100+ traits dan analisa ilmiah.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #602373; 
+            --primary-light: #9264B5; 
+            --primary-dark: #3F1550;
+            --secondary: #FFBF2D; 
+            --secondary-light: #FFD470;
+            --accent: #E01869; 
+            --accent-light: #F04D8E;
+            --headline: #29272A; 
+            --body: #666168;
+            --light: #F7F7F8; 
+            --white: #FFFFFF; 
+            --border: #ebebeb;
+            --font: 'Poppins', system-ui, sans-serif;
+            --radius: 16px; 
+            --radius-lg: 24px;
+            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --max-w: 1200px;
+        }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font); background: var(--white); color: var(--body); overflow-x: hidden; line-height: 1.6; }
+        .container { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+
+        /* ===== NAVBAR ===== */
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 20px; transition: all 0.4s var(--ease); }
+        .navbar-inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.75); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); border: 1px solid rgba(247,247,248,0.9); border-radius: 100px; padding: 12px 28px; box-shadow: 0 4px 30px rgba(0,0,0,0.06); transition: all 0.4s var(--ease); }
+        .navbar.scrolled .navbar-inner { background: rgba(255,255,255,0.92); box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-color: rgba(235,235,235,0.9); }
+        .navbar-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--headline); flex-shrink: 0; }
+        .navbar-logo { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; color: white; box-shadow: 0 4px 14px rgba(96,35,115,0.3); }
+        .navbar-brand-text { font-size: 16px; font-weight: 700; color: var(--headline); }
+        .navbar-brand-text span { color: var(--primary); }
+        .navbar-nav { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .navbar-nav a { text-decoration: none; color: var(--body); font-size: 14px; font-weight: 600; transition: color 0.3s ease; position: relative; }
+        .navbar-nav a::after { content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: var(--accent); border-radius: 2px; transition: width 0.3s var(--ease); }
+        .navbar-nav a:hover { color: var(--primary); }
+        .navbar-nav a:hover::after { width: 100%; }
+        .btn-login { padding: 10px 24px; border: none; border-radius: 100px; background: var(--primary); color: white; font-family: var(--font); font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; box-shadow: 0 4px 14px rgba(96,35,115,0.25); }
+        .btn-login:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(96,35,115,0.35); }
+        .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--headline); margin: 5px 0; border-radius: 2px; }
+        .navbar-actions { display: flex; align-items: center; gap: 12px; }
+
+        /* ===== BUTTONS ===== */
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; border-radius: 100px; font-family: var(--font); font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.35s var(--ease); border: none; position: relative; overflow: hidden; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; box-shadow: 0 8px 24px rgba(96,35,115,0.3), inset 0 1px 0 rgba(255,255,255,0.15); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(96,35,115,0.4); }
+        .btn-outline { background: transparent; color: var(--primary); border: 2px solid rgba(96,35,115,0.2); }
+        .btn-outline:hover { background: rgba(96,35,115,0.05); border-color: var(--primary); transform: translateY(-2px); }
+        .btn-accent { background: var(--accent); color: white; box-shadow: 0 8px 24px rgba(224,24,105,0.3); }
+        .btn-accent:hover { background: #c81560; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(224,24,105,0.4); }
+        .btn-icon { width: 18px; height: 18px; transition: transform 0.3s var(--ease); }
+        .btn:hover .btn-icon { transform: translateX(3px); }
+
+        /* ===== SECTION UTILITIES ===== */
+        .section { padding: 100px 0; position: relative; }
+        .section-light { background: var(--light); }
+        .section-dark { background: var(--headline); color: var(--white); }
+        .section-header { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+        .section-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: rgba(96,35,115,0.06); border: 1px solid rgba(96,35,115,0.12); border-radius: 100px; font-size: 13px; font-weight: 600; color: var(--primary); margin-bottom: 16px; }
+        .section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.25; color: var(--headline); margin-bottom: 16px; letter-spacing: -0.02em; }
+        .section-dark .section-title { color: var(--white); }
+        .section-title .hl { color: var(--primary); }
+        .section-title .hl-accent { color: var(--accent); }
+        .section-desc { font-size: 16px; color: var(--body); line-height: 1.7; }
+        .section-dark .section-desc { color: rgba(255,255,255,0.65); }
+
+        /* ===== HERO SECTION (COMPREHENSIVE COURSE FOCUS) ===== */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 130px 20px 80px; overflow: hidden; background: radial-gradient(circle at 80% 20%, rgba(96,35,115,0.04) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(224,24,105,0.03) 0%, transparent 50%); }
+        .hero-container { position: relative; z-index: 2; max-width: var(--max-w); margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1.15fr 0.95fr; gap: 64px; align-items: center; }
+        .hero-content { display: flex; flex-direction: column; gap: 24px; }
+        
+        .hero-badge { display: inline-flex; align-items: center; gap: 10px; padding: 6px 18px 6px 8px; background: var(--white); border: 1px solid var(--border); border-radius: 100px; width: fit-content; box-shadow: 0 4px 16px rgba(0,0,0,0.04); animation: fadeUp 0.7s var(--ease) both 0.1s; }
+        .hero-badge-icon { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold; }
+        .hero-badge-text { font-size: 13px; font-weight: 500; color: var(--body); }
+        .hero-badge-text strong { color: var(--primary); font-weight: 700; }
+        
+        .hero-headline { font-size: clamp(34px, 4.2vw, 54px); font-weight: 800; line-height: 1.18; letter-spacing: -0.025em; color: var(--headline); animation: fadeUp 0.7s var(--ease) both 0.25s; }
+        .hero-headline .highlight { color: var(--primary); position: relative; display: inline-block; }
+        .hero-headline .highlight::after { content: ''; position: absolute; bottom: 6px; left: 0; right: 0; height: 12px; background: rgba(255,191,45,0.3); z-index: -1; border-radius: 4px; transform: skewX(-6deg); }
+        .hero-headline .accent-text { color: var(--accent); }
+        
+        .hero-tagline { font-size: 14px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--primary-light); display: flex; align-items: center; gap: 12px; animation: fadeUp 0.7s var(--ease) both 0.35s; }
+        .hero-tagline::before { content: ''; width: 32px; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 2px; flex-shrink: 0; }
+        
+        .hero-description { font-size: 16px; line-height: 1.75; color: var(--body); max-width: 540px; animation: fadeUp 0.7s var(--ease) both 0.45s; }
+        .hero-description strong { color: var(--headline); font-weight: 600; }
+
+        /* Hero Highlights Pills */
+        .hero-highlights { display: flex; flex-direction: column; gap: 12px; margin: 4px 0; animation: fadeUp 0.7s var(--ease) both 0.55s; }
+        .highlight-item { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--headline); font-weight: 500; }
+        .highlight-check { width: 22px; height: 22px; border-radius: 50%; background: rgba(96,35,115,0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; flex-shrink: 0; }
+        
+        .hero-cta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px; animation: fadeUp 0.7s var(--ease) both 0.65s; }
+
+        /* Hero Visual */
+        .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; animation: fadeUp 0.9s var(--ease) both 0.3s; }
+        .hero-image-wrapper { position: relative; width: 100%; max-width: 480px; }
+        .hero-image-main { position: relative; width: 100%; aspect-ratio: 4/5; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 25px 60px rgba(96,35,115,0.15), 0 10px 25px rgba(0,0,0,0.08); border: 4px solid var(--white); }
+        .hero-image-main img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .stat-card { position: absolute; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; display: flex; align-items: center; gap: 14px; z-index: 5; box-shadow: 0 12px 40px rgba(0,0,0,0.1); transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1); }
+        .stat-card:hover { transform: translateY(-6px) scale(1.03); box-shadow: 0 18px 50px rgba(0,0,0,0.15); border-color: var(--primary-light); }
+        .stat-card-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .stat-card-value { font-size: 19px; font-weight: 800; color: var(--headline); line-height: 1.1; }
+        .stat-card-label { font-size: 11px; color: var(--body); font-weight: 500; }
+        
+        .stat-card-1 { top: 12%; left: -36px; animation: floatY 6s ease-in-out infinite; }
+        .stat-card-1 .stat-card-icon { background: rgba(96,35,115,0.1); color: var(--primary); }
+        .stat-card-2 { bottom: 20%; right: -28px; animation: floatY 6s ease-in-out infinite -2s; }
+        .stat-card-2 .stat-card-icon { background: rgba(224,24,105,0.1); color: var(--accent); }
+        .stat-card-3 { bottom: 3%; left: 6%; animation: floatY 6s ease-in-out infinite -4s; }
+        .stat-card-3 .stat-card-icon { background: rgba(255,191,45,0.15); color: #C49600; }
+        @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+        /* ===== ACCREDITATION BANNER ===== */
+        .trust-banner { position: relative; z-index: 2; max-width: var(--max-w); margin: -30px auto 0; padding: 0 20px; animation: fadeUp 0.7s var(--ease) both 0.8s; }
+        .trust-inner { background: var(--light); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; gap: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); }
+        .trust-left { display: flex; align-items: center; gap: 20px; flex: 1; }
+        .trust-shield { width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, rgba(96,35,115,0.1), rgba(224,24,105,0.08)); border: 1px solid rgba(96,35,115,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 26px; }
+        .trust-text h4 { font-size: 16px; font-weight: 700; color: var(--headline); margin-bottom: 4px; }
+        .trust-text p { font-size: 13px; color: var(--body); line-height: 1.6; }
+        .trust-text strong { color: var(--primary); }
+        .trust-certs { display: flex; gap: 16px; flex-shrink: 0; }
+        .cert-badge { text-align: center; padding: 12px 24px; border-radius: 14px; background: var(--white); border: 1px solid var(--border); box-shadow: 0 4px 14px rgba(0,0,0,0.03); transition: all 0.3s ease; }
+        .cert-badge:hover { border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(96,35,115,0.1); }
+        .cert-badge-title { font-size: 20px; font-weight: 800; color: var(--primary); display: block; }
+        .cert-badge-sub { font-size: 9px; color: var(--body); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: block; margin-top: 2px; }
+
+        /* ===== WHY CHA IS IMPORTANT (PROFESSIONS) ===== */
+        .professions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .prof-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px 24px; transition: all 0.4s var(--ease); position: relative; overflow: hidden; }
+        .prof-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent)); opacity: 0; transition: opacity 0.3s ease; }
+        .prof-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(96,35,115,0.08); border-color: rgba(96,35,115,0.2); }
+        .prof-card:hover::after { opacity: 1; }
+        .prof-icon { width: 52px; height: 52px; border-radius: 14px; background: rgba(96,35,115,0.06); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 20px; }
+        .prof-card:nth-child(2) .prof-icon { background: rgba(224,24,105,0.06); color: var(--accent); }
+        .prof-card:nth-child(3) .prof-icon { background: rgba(255,191,45,0.12); color: #C49600; }
+        .prof-card:nth-child(4) .prof-icon { background: rgba(72,199,142,0.1); color: #2B9A66; }
+        .prof-card h3 { font-size: 17px; font-weight: 700; color: var(--headline); margin-bottom: 12px; }
+        .prof-card p { font-size: 13.5px; color: var(--body); line-height: 1.65; }
+
+        /* ===== METHODOLOGY (5 STEPS) ===== */
+        .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; position: relative; }
+        .step-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 20px; text-align: center; transition: all 0.3s var(--ease); position: relative; }
+        .step-card:hover { border-color: var(--primary-light); box-shadow: 0 12px 30px rgba(0,0,0,0.06); transform: translateY(-4px); }
+        .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: white; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 4px 12px rgba(96,35,115,0.3); }
+        .step-card:nth-child(even) .step-num { background: var(--accent); box-shadow: 0 4px 12px rgba(224,24,105,0.3); }
+        .step-card h4 { font-size: 15px; font-weight: 700; color: var(--headline); margin-bottom: 8px; }
+        .step-card p { font-size: 12.5px; color: var(--body); line-height: 1.6; }
+
+        /* ===== CURRICULUM MODULES ===== */
+        .modules-list { display: flex; flex-direction: column; gap: 20px; max-width: 960px; margin: 0 auto; }
+        .module-item { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; display: grid; grid-template-columns: 220px 1fr; gap: 32px; align-items: start; transition: all 0.3s var(--ease); }
+        .module-item:hover { border-color: rgba(96,35,115,0.25); box-shadow: 0 12px 36px rgba(0,0,0,0.05); }
+        .module-header { padding-right: 24px; border-right: 1px solid var(--border); }
+        .module-tag { display: inline-block; padding: 4px 12px; background: rgba(96,35,115,0.08); color: var(--primary); border-radius: 100px; font-size: 12px; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .module-title { font-size: 19px; font-weight: 700; color: var(--headline); line-height: 1.3; }
+        .module-body h4 { font-size: 15px; font-weight: 600; color: var(--primary); margin-bottom: 10px; }
+        .module-body p { font-size: 14px; color: var(--body); line-height: 1.7; margin-bottom: 16px; }
+        .module-perks { display: flex; flex-wrap: wrap; gap: 10px; }
+        .perk-pill { font-size: 12px; font-weight: 500; color: var(--headline); background: var(--light); padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border); display: flex; align-items: center; gap: 6px; }
+        .perk-pill span { color: var(--primary); font-weight: 700; }
+
+        /* ===== FACILITIES & BENEFITS ===== */
+        .fac-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .fac-card { background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; display: flex; gap: 18px; transition: all 0.3s var(--ease); }
+        .fac-card:hover { background: var(--white); box-shadow: 0 12px 36px rgba(0,0,0,0.06); transform: translateY(-4px); border-color: rgba(96,35,115,0.15); }
+        .fac-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--white); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        .fac-content h4 { font-size: 16px; font-weight: 700; color: var(--headline); margin-bottom: 6px; }
+        .fac-content p { font-size: 13.5px; color: var(--body); line-height: 1.6; }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); padding: 90px 0; text-align: center; position: relative; overflow: hidden; }
+        .cta-section::before { content: ''; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: rgba(224,24,105,0.12); top: -250px; right: -150px; pointer-events: none; }
+        .cta-section::after { content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,191,45,0.08); bottom: -200px; left: -100px; pointer-events: none; }
+        .cta-content { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+        .cta-badge { display: inline-block; padding: 6px 18px; background: rgba(255,255,255,0.15); color: white; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 20px; backdrop-filter: blur(8px); }
+        .cta-content h2 { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; color: white; margin-bottom: 20px; line-height: 1.2; letter-spacing: -0.02em; }
+        .cta-content p { font-size: 17px; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 36px; line-height: 1.7; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-white { background: white; color: var(--primary); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
+        .btn-ghost-white { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4); }
+        .btn-ghost-white:hover { background: rgba(255,255,255,0.1); border-color: white; transform: translateY(-2px); }
+
+        /* ===== FOOTER ===== */
+        .footer { background: var(--headline); color: rgba(255,255,255,0.5); padding: 70px 0 0; }
+        .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
+        .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+        .footer-brand .navbar-logo { width: 36px; height: 36px; font-size: 13px; }
+        .footer-brand-text { font-size: 16px; font-weight: 700; color: white; }
+        .footer-brand-text span { color: var(--primary-light); }
+        .footer-about { font-size: 14px; line-height: 1.7; max-width: 340px; }
+        .footer h5 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 0.08em; }
+        .footer ul { list-style: none; }
+        .footer ul li { margin-bottom: 12px; }
+        .footer ul a { text-decoration: none; color: rgba(255,255,255,0.55); font-size: 14px; transition: color 0.3s ease; }
+        .footer ul a:hover { color: var(--primary-light); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding: 28px 0; display: flex; align-items: center; justify-content: space-between; font-size: 13px; }
+        .footer-socials { display: flex; gap: 20px; }
+        .footer-socials a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s ease; }
+        .footer-socials a:hover { color: var(--primary-light); }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s var(--ease); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-container { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+            .hero-content { align-items: center; order: 2; }
+            .hero-visual { order: 1; }
+            .hero-description { max-width: 600px; }
+            .hero-highlights { align-items: center; }
+            .hero-tagline::before { display: none; }
+            .hero-image-wrapper { max-width: 380px; }
+            .stat-card-1 { left: -10px; } .stat-card-2 { right: -10px; }
+            .navbar-nav { display: none; }
+            .mobile-toggle { display: block; }
+            .trust-inner { flex-direction: column; text-align: center; padding: 28px 20px; }
+            .trust-left { flex-direction: column; }
+            .trust-certs { justify-content: center; }
+            .professions-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid .step-card:last-child { grid-column: span 2; max-width: 400px; margin: 0 auto; }
+            .module-item { grid-template-columns: 1fr; gap: 16px; }
+            .module-header { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 16px; }
+            .fac-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 640px) {
+            .hero-headline { font-size: clamp(30px, 8vw, 42px); }
+            .stat-card { padding: 12px 16px; gap: 12px; }
+            .stat-card-icon { width: 38px; height: 38px; font-size: 16px; }
+            .stat-card-value { font-size: 17px; }
+            .btn { padding: 14px 26px; font-size: 14px; }
+            .navbar-inner { padding: 10px 18px; border-radius: 16px; }
+            .navbar { padding: 10px 12px; }
+            .professions-grid, .steps-grid, .fac-grid { grid-template-columns: 1fr; }
+            .steps-grid .step-card:last-child { grid-column: span 1; max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="navbar-brand"><div class="navbar-logo">GI</div><div class="navbar-brand-text">Grafologi <span>Indonesia</span></div></a>
+            <ul class="navbar-nav">
+                <li><a href="#about">Tentang CHA</a></li>
+                <li><a href="#methodology">Metodologi</a></li>
+                <li><a href="#curriculum">Kurikulum</a></li>
+                <li><a href="#facilities">Fasilitas</a></li>
+                <li><a href="#daftar">Daftar</a></li>
+            </ul>
+            <div class="navbar-actions">
+                <a href="#daftar" class="btn-login">Daftar Kelas</a>
+                <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (ACCURATE TO COMPREHENSIVE COURSE CHA) -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge"><div class="hero-badge-icon">✓</div><span class="hero-badge-text">Sertifikasi Resmi <strong>KAROHS, USA & Dinas Pendidikan</strong></span></div>
+                <h1 class="hero-headline">Comprehensive Course:<br>Sertifikasi Internasional <span class="highlight">CHA</span></h1>
+                <p class="hero-tagline">Certified Handwriting Analyst</p>
+                <p class="hero-description">Pelajari grafologi secara profesional untuk memahami manusia lebih mendalam dan perkuat kredibilitas profesi Anda dengan <strong>metodologi ilmiah yang terukur dan objektif</strong>.</p>
+                
+                <div class="hero-highlights">
+                    <div class="highlight-item"><div class="highlight-check">✓</div><span><strong>Kuasai 100+ Traits</strong> — Indikator kepribadian lengkap & sistematis</span></div>
+                    <div class="highlight-item"><div class="highlight-check">✓</div><span><strong>Sertifikasi Resmi CHA</strong> — Diakui secara global dari KAROHS, USA</span></div>
+                    <div class="highlight-item"><div class="highlight-check">✓</div><span><strong>Keunggulan Profesional</strong> — Keahlian analisis untuk HR, Psikolog & Coach</span></div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#daftar" class="btn btn-primary"><span>Daftar Sertifikasi Sekarang</span><svg class="btn-icon" viewBox="0 0 20 20" fill="none"><path d="M4.167 10h11.666M10 4.167L15.833 10 10 15.833" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <a href="#curriculum" class="btn btn-outline"><span>Lihat Kurikulum Modul</span></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-main"><img src="hero_light_handwriting.png" alt="Sertifikasi Grafologi Comprehensive Course CHA - LKP Grafologi Indonesia" loading="eager"></div>
+                    <div class="stat-card stat-card-1"><div class="stat-card-icon">🏅</div><div><span class="stat-card-value">Gelar CHA</span><br><span class="stat-card-label">Certified Analyst</span></div></div>
+                    <div class="stat-card stat-card-2"><div class="stat-card-icon">📚</div><div><span class="stat-card-value">13+ Buku</span><br><span class="stat-card-label">& Modul Resmi</span></div></div>
+                    <div class="stat-card stat-card-3"><div class="stat-card-icon">🧠</div><div><span class="stat-card-value">100+ Traits</span><br><span class="stat-card-label">Kepribadian</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BANNER -->
+    <div class="trust-banner">
+        <div class="trust-inner">
+            <div class="trust-left">
+                <div class="trust-shield">🛡️</div>
+                <div class="trust-text"><h4>Legalitas Ganda & Diakui Internasional</h4><p>Sertifikat resmi dikeluarkan oleh <strong>KAROHS International School of Handwriting Analysis (USA)</strong> dan <strong>LKP Grafologi Indonesia</strong> (Terdaftar di Dinas Pendidikan sejak 2012).</p></div>
+            </div>
+            <div class="trust-certs">
+                <div class="cert-badge"><span class="cert-badge-title">CHA</span><span class="cert-badge-sub">Handwriting Analyst</span></div>
+                <div class="cert-badge"><span class="cert-badge-title">KAROHS</span><span class="cert-badge-sub">USA Certified</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHY CHA IS IMPORTANT -->
+    <section class="section section-light" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-badge">🎯 Mengapa Sertifikasi Ini Penting?</div>
+                <h2 class="section-title">Memahami Manusia Tidak <span class="hl">Semudah Kelihatannya</span></h2>
+                <p class="section-desc">Sertifikasi grafologi CHA membekali Anda dengan metode terstruktur, objektif, dan dapat dipertanggungjawabkan dalam pengambilan keputusan penting.</p>
+            </div>
+            <div class="professions-grid">
+                <div class="prof-card reveal">
+                    <div class="prof-icon">👥</div>
+                    <h3>HRD & Perekrut</h3>
+                    <p>Menilai kandidat secara objektif dan mendalam. Hindari kesalahan rekrutmen dengan memetakan karakter, resiliensi, dan integritas kerja.</p>
+                </div>
+                <div class="prof-card reveal">
+                    <div class="prof-icon">🧠</div>
+                    <h3>Psikolog & Konselor</h3>
+                    <p>Alat bantu diagnostik tambahan yang efektif. Ungkap dinamika kepribadian, ketakutan, dan konflik internal yang tidak terucap saat konseling.</p>
+                </div>
+                <div class="prof-card reveal">
+                    <div class="prof-icon">🎓</div>
+                    <h3>Pendidik & Orang Tua</h3>
+                    <p>Kenali potensi tersembunyi, gaya belajar, dan kebutuhan emosional anak atau siswa yang sering kali tidak tampak di permukaan.</p>
+                </div>
+                <div class="prof-card reveal">
+                    <div class="prof-icon">💼</div>
+                    <h3>Coach & Konsultan</h3>
+                    <p>Pahami motivasi utama, hambatan mental, dan pola perilaku klien agar proses pendampingan dan transformasi jauh lebih tepat sasaran.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHODOLOGY (5 STEPS) -->
+    <section class="section" id="methodology">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-badge">🔬 Metodologi Ilmiah</div>
+                <h2 class="section-title">Cara Kerja Grafologi dalam <span class="hl-accent">Praktik Profesional</span></h2>
+                <p class="section-desc">Grafologi profesional tidak bekerja berdasarkan asumsi atau intuisi semata. Setiap analisis dilakukan melalui proses yang terstruktur dan terukur.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card reveal">
+                    <div class="step-num">1</div>
+                    <h4>Sampel Tulisan Alami</h4>
+                    <p>Klien menulis spontan di kertas polos menggunakan pulpen biasa sebagai mencerminkan kondisi alami penulis.</p>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-num">2</div>
+                    <h4>Identifikasi 100+ Traits</h4>
+                    <p>Mengamati lebih dari 100 ciri kepribadian yang dikelompokkan ke dalam 10 aspek psikologis utama.</p>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-num">3</div>
+                    <h4>Pengukur & Klasifikasi</h4>
+                    <p>Mengukur kemiringan dengan busur derajat (protractor) dan mengklasifikasikan ke intensitas terstandar.</p>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-num">4</div>
+                    <h4>Analisis Dinamika</h4>
+                    <p>Melihat bagaimana sifat saling menguatkan, melemahkan, atau berkonflik membentuk kepribadian utuh.</p>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-num">5</div>
+                    <h4>Laporan Profesional</h4>
+                    <p>Menyusun Laporan Umum (GHA Form) & Laporan Vokasional (VHA Form) yang rapi, akurat, dan sistematis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRICULUM MODULES -->
+    <section class="section section-light" id="curriculum">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-badge">📚 Kurikulum Terstruktur</div>
+                <h2 class="section-title">Belajar Apa Saja di <span class="hl">Comprehensive Course</span>?</h2>
+                <p class="section-desc">Kurikulum terdiri dari 5 modul besar yang saling terhubung, dari pengenalan sifat dasar hingga siap membuka layanan konsultan grafologi profesional.</p>
+            </div>
+            <div class="modules-list">
+                <div class="module-item reveal">
+                    <div class="module-header"><span class="module-tag">Modul 1</span><h3 class="module-title">100+ Traits Kepribadian & 10 Aspek Utama</h3></div>
+                    <div class="module-body">
+                        <h4>Fondasi Utama Analisis Kepribadian</h4>
+                        <p>Mempelajari 100+ traits grafologi dalam 10 aspek psikologis: emosional, intelektual, kepercayaan diri, dorongan ambisi, kebiasaan kerja, hubungan sosial, komunikasi, bakat, ketakutan, hingga mekanisme pertahanan diri.</p>
+                        <div class="module-perks">
+                            <div class="perk-pill"><span>📖</span> Book 1, 2 & 3 (Manual & Descriptions)</div>
+                            <div class="perk-pill"><span>🃏</span> Bonus 112 Flash Cards</div>
+                            <div class="perk-pill"><span>📕</span> Dictionary of Traits</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-item reveal">
+                    <div class="module-header"><span class="module-tag">Modul 2</span><h3 class="module-title">Teknik Pengukuran & Statistik Slant</h3></div>
+                    <div class="module-body">
+                        <h4>Mengubah Asumsi Menjadi Data Terukur</h4>
+                        <p>Jantung teknis grafologi profesional. Belajar mengukur kemiringan tulisan (upslant & downslant) menggunakan busur derajat (protractor) serta menerapkan metode statistik "mode" untuk melihat keseimbangan emosi dan kontrol diri.</p>
+                        <div class="module-perks">
+                            <div class="perk-pill"><span>📐</span> Busur Derajat (Protractor) Fisik</div>
+                            <div class="perk-pill"><span>📖</span> Master's Measuring Guide</div>
+                            <div class="perk-pill"><span>📝</span> Measuring Worksheets</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-item reveal">
+                    <div class="module-header"><span class="module-tag">Modul 3</span><h3 class="module-title">Laporan Umum & Dinamika Kepribadian</h3></div>
+                    <div class="module-body">
+                        <h4>Menyusun General Handwriting Analysis (GHA)</h4>
+                        <p>Belajar teknik skoring intensitas KAROHS (skor 1–9), merangkai conflicting traits, dan menyusun laporan psikologis komprehensif menggunakan GHA Form serta ribuan frasa profesional siap pakai.</p>
+                        <div class="module-perks">
+                            <div class="perk-pill"><span>📖</span> Book 4, 5 & 6 (General Analysis Guide)</div>
+                            <div class="perk-pill"><span>📝</span> GHA Form & Intensity Tables</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-item reveal">
+                    <div class="module-header"><span class="module-tag">Modul 4</span><h3 class="module-title">Laporan Vokasional & Job Profiling</h3></div>
+                    <div class="module-body">
+                        <h4>Vocational Analysis untuk Dunia Kerja & HR</h4>
+                        <p>Menerapkan grafologi untuk rekrutmen, penempatan kerja, dan pengembangan karier. Memetakan kompetensi dengan Occupational Trait Inventory (500+ profesi) dan menyusun VHA Form.</p>
+                        <div class="module-perks">
+                            <div class="perk-pill"><span>📖</span> Book 7 & 8 (Vocational Guides)</div>
+                            <div class="perk-pill"><span>💼</span> Inventory 500+ Profesi</div>
+                            <div class="perk-pill"><span>📝</span> VHA Form Standar Korporat</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-item reveal">
+                    <div class="module-header"><span class="module-tag">Modul 5</span><h3 class="module-title">Marketing Services & Ujian CHA</h3></div>
+                    <div class="module-body">
+                        <h4>Membangun Karier & Kelulusan Certified Analyst</h4>
+                        <p>Strategi praktis menawarkan jasa konsultan grafologi, menyusun proposal, penetapan harga, etika profesi, serta menyelesaikan Diploma Test untuk resmi menyandang gelar CHA dari KAROHS, USA.</p>
+                        <div class="module-perks">
+                            <div class="perk-pill"><span>📖</span> FAQ Book & Making It Sell Guide</div>
+                            <div class="perk-pill"><span>🎓</span> Diploma Test Ujian Akhir</div>
+                            <div class="perk-pill"><span>🏅</span> Gelar Resmi CHA Internasional</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FACILITIES & BENEFITS -->
+    <section class="section" id="facilities">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-badge">🎁 Ekosistem Lengkap</div>
+                <h2 class="section-title">Lebih dari Sekadar <span class="hl">Kursus Grafologi</span></h2>
+                <p class="section-desc">Dukung proses belajar Anda dengan fasilitas kelas dunia yang dirancang agar Anda siap praktik secara profesional.</p>
+            </div>
+            <div class="fac-grid">
+                <div class="fac-card reveal">
+                    <div class="fac-icon">📦</div>
+                    <div class="fac-content"><h4>13+ Buku & Modul Cetak</h4><p>Semua buku manual dan panduan resmi dikirim langsung ke alamat Anda sebagai fondasi belajar standar global.</p></div>
+                </div>
+                <div class="fac-card reveal">
+                    <div class="fac-icon">🖥️</div>
+                    <div class="fac-content"><h4>20x Webinar Terjadwal</h4><p>Dibimbing langsung oleh mentor secara bertahap, dilengkapi rekaman webinar yang bisa ditonton ulang kapan saja.</p></div>
+                </div>
+                <div class="fac-card reveal">
+                    <div class="fac-icon">📝</div>
+                    <div class="fac-content"><h4>Worksheets & Templates</h4><p>Akses GHA Form, VHA Form, dan lembar kerja profesional siap pakai untuk praktik analisis klien sebenarnya.</p></div>
+                </div>
+                <div class="fac-card reveal">
+                    <div class="fac-icon">🃏</div>
+                    <div class="fac-content"><h4>Bonus 112 Flash Cards</h4><p>Kartu fisik eksklusif untuk melatih pengenalan ciri-ciri tulisan tangan dengan cepat dan praktis di mana saja.</p></div>
+                </div>
+                <div class="fac-card reveal">
+                    <div class="fac-icon">🤝</div>
+                    <div class="fac-content"><h4>Komunitas & Mentor Aktif</h4><p>Dukungan penuh dari jaringan alumni, forum diskusi, dan bimbingan mentor yang aktif membantu perkembangan Anda.</p></div>
+                </div>
+                <div class="fac-card reveal">
+                    <div class="fac-icon">♾️</div>
+                    <div class="fac-content"><h4>Member Area Seumur Hidup</h4><p>Akses selamanya ke platform pembelajaran, update materi, dan referensi tanpa batas waktu paska kelulusan.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section" id="daftar">
+        <div class="container cta-content">
+            <div class="cta-badge">🌟 Investasi Masa Depan Profesi Anda</div>
+            <h2>Siap Menyandang Gelar<br>Certified Handwriting Analyst (CHA)?</h2>
+            <p>Mulai langkah Anda hari ini. Kuasai keahlian membaca kepribadian secara ilmiah dan raih sertifikasi internasional dari KAROHS, USA & LKP Grafologi Indonesia.</p>
+            <div class="cta-buttons">
+                <a href="https://member.grafologiindonesia.com/login" class="btn btn-white"><span>Daftar Comprehensive Course</span><svg class="btn-icon" viewBox="0 0 20 20" fill="none"><path d="M4.167 10h11.666M10 4.167L15.833 10 10 15.833" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                <a href="https://grafologiindonesia.com/agenda/" class="btn btn-ghost-white"><span>Konsultasi & Jadwal Kelas</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand"><div class="navbar-logo">GI</div><div class="footer-brand-text">Grafologi <span>Indonesia</span></div></div>
+                    <p class="footer-about">Lembaga Kursus & Sertifikasi Grafologi resmi di Indonesia. Perwakilan KAROHS International School of Handwriting Analysis (USA).</p>
+                </div>
+                <div>
+                    <h5>Sertifikasi</h5>
+                    <ul>
+                        <li><a href="#">Comprehensive (CHA)</a></li>
+                        <li><a href="#">Master Course (CMHA)</a></li>
+                        <li><a href="#">Applicative Course</a></li>
+                        <li><a href="#">Private Class 1-on-1</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Metodologi</h5>
+                    <ul>
+                        <li><a href="#">100+ Traits Kepribadian</a></li>
+                        <li><a href="#">Pengukuran Slant & Mode</a></li>
+                        <li><a href="#">Laporan Umum (GHA Form)</a></li>
+                        <li><a href="#">Laporan Kerja (VHA Form)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Legalitas & Bantuan</h5>
+                    <ul>
+                        <li><a href="#">KAROHS International USA</a></li>
+                        <li><a href="#">Terdaftar Dinas Pendidikan</a></li>
+                        <li><a href="#">Validitas & Reliabilitas</a></li>
+                        <li><a href="#">Hubungi Tim Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2012–2026 LKP Grafologi Indonesia & KAROHS USA. All rights reserved.</span>
+                <div class="footer-socials">
+                    <a href="#">YouTube</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', scrollY > 40);
+        }, { passive: true });
+
+        // Reveal on scroll
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal, .hero-visual').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>
