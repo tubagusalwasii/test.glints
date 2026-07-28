@@ -37,10 +37,9 @@
         .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 16px 20px; transition: all 0.4s var(--ease); }
         .navbar-inner { max-width: var(--max-w); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.75); backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); border: 1px solid rgba(247,247,248,0.9); border-radius: 100px; padding: 12px 28px; box-shadow: 0 4px 30px rgba(0,0,0,0.06); transition: all 0.4s var(--ease); }
         .navbar.scrolled .navbar-inner { background: rgba(255,255,255,0.92); box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-color: rgba(235,235,235,0.9); }
-        .navbar-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--headline); flex-shrink: 0; }
-        .navbar-logo { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, var(--primary), var(--primary-light)); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 15px; color: white; box-shadow: 0 4px 14px rgba(96,35,115,0.3); }
-        .navbar-brand-text { font-size: 16px; font-weight: 700; color: var(--headline); }
-        .navbar-brand-text span { color: var(--primary); }
+        .navbar-brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+        .navbar-logo-img { height: 42px; width: auto; object-fit: contain; transition: transform 0.3s var(--ease); }
+        .navbar-brand:hover .navbar-logo-img { transform: scale(1.02); }
         .navbar-nav { display: flex; align-items: center; gap: 32px; list-style: none; }
         .navbar-nav a { text-decoration: none; color: var(--body); font-size: 14px; font-weight: 600; transition: color 0.3s ease; position: relative; }
         .navbar-nav a::after { content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background: var(--accent); border-radius: 2px; transition: width 0.3s var(--ease); }
@@ -198,10 +197,8 @@
         /* ===== FOOTER ===== */
         .footer { background: var(--headline); color: rgba(255,255,255,0.5); padding: 70px 0 0; }
         .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 56px; }
-        .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
-        .footer-brand .navbar-logo { width: 36px; height: 36px; font-size: 13px; }
-        .footer-brand-text { font-size: 16px; font-weight: 700; color: white; }
-        .footer-brand-text span { color: var(--primary-light); }
+        .footer-brand { display: inline-flex; align-items: center; background: var(--white); padding: 10px 18px; border-radius: 14px; margin-bottom: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+        .footer-brand .navbar-logo-img { height: 36px; }
         .footer-about { font-size: 14px; line-height: 1.7; max-width: 340px; }
         .footer h5 { font-size: 14px; font-weight: 700; color: white; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 0.08em; }
         .footer ul { list-style: none; }
@@ -261,7 +258,7 @@
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="navbar-inner">
-            <a href="#" class="navbar-brand"><div class="navbar-logo">GI</div><div class="navbar-brand-text">Grafologi <span>Indonesia</span></div></a>
+            <a href="#" class="navbar-brand"><img src="logo.png" alt="LKP Grafologi Indonesia Logo" class="navbar-logo-img"></a>
             <ul class="navbar-nav">
                 <li><a href="#about">Tentang CHA</a></li>
                 <li><a href="#methodology">Metodologi</a></li>
@@ -523,7 +520,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-brand"><div class="navbar-logo">GI</div><div class="footer-brand-text">Grafologi <span>Indonesia</span></div></div>
+                    <div class="footer-brand"><img src="logo.png" alt="LKP Grafologi Indonesia Logo" class="navbar-logo-img"></div>
                     <p class="footer-about">Lembaga Kursus & Sertifikasi Grafologi resmi di Indonesia. Perwakilan KAROHS International School of Handwriting Analysis (USA).</p>
                 </div>
                 <div>
